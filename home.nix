@@ -14,7 +14,7 @@
   programs.alacritty = {
     enable = true;
     settings = {
-      general.import = [ pkgs.alacritty-theme.ayu_mirage ];
+      general.import = [ pkgs.alacritty-theme.marine_dark ];
 
       font = {
         normal = {
@@ -28,7 +28,7 @@
           columns = 70;
           lines = 20;
         };
-        opacity = 0.7;
+        opacity = 0.65;
         blur = true;
         decorations = "full";
         startup_mode = "Windowed";

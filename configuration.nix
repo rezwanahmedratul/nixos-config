@@ -131,6 +131,7 @@
     noto-fonts
     noto-fonts-cjk-sans
     noto-fonts-extra
+    libreoffice-qt6-fresh
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
