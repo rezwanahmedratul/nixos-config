@@ -92,26 +92,26 @@
   ];
 
   # Nix Garbage Collection Automation (weekly, keep only 7 days)
-  systemd.services.nix-gc-cleanup = {
-    description = "Nix Garbage Collector (keep only 7 days)";
-    serviceConfig = {
-      Type = "oneshot";
-      ExecStart = "${pkgs.writeShellScript "nix-gc-cleanup" ''
+  #systemd.services.nix-gc-cleanup = {
+   #description = "Nix Garbage Collector (keep only 7 days)";
+ #   serviceConfig = {
+ #   Type = "oneshot";
+ #     ExecStart = "${pkgs.writeShellScript "nix-gc-cleanup" ''
         #!/bin/sh
-        nix-collect-garbage --delete-older-than 7d
-        nix-collect-garbage -d
-        nix store gc
-      ''}";
-    };
-  };
+   #     nix-collect-garbage --delete-older-than 7d
+   #     nix-collect-garbage -d
+ #       nix store gc
+    #  ''}";
+  #  };
+#  };
 
-  systemd.timers."nix-gc" = {
-    wantedBy = [ "timers.target" ];
-    timerConfig = {
-      OnCalendar = "weekly";
-      Persistent = true;
-    };
-  };
+# systemd.timers."nix-gc" = {
+#    wantedBy = [ "timers.target" ];
+  #  timerConfig = {
+   #   OnCalendar = "weekly";
+  #    Persistent = true;
+   # };
+ # };
 
   system.stateVersion = "25.05";
 }

@@ -14,7 +14,7 @@
   programs.alacritty = {
     enable = true;
     settings = {
-      general.import = [ pkgs.alacritty-theme.marine_dark ];
+      general.import = [ pkgs.alacritty-theme.github_dark ];
 
       font = {
         normal = {
@@ -48,6 +48,7 @@
     gnumake
     cmake
     kde-rounded-corners
+    zen-browser
   ];
 
   home.sessionVariables = {
@@ -69,6 +70,18 @@
         </edit>
       </match>
     </fontconfig>
+  '';
+
+  # Zen Browser desktop entry
+  home.file.".local/share/applications/zen-browser.desktop".text = ''
+    [Desktop Entry]
+    Name=Zen Browser
+    Exec=zen-browser
+    Icon=/home/ratul/Pictures/Icon/app-icon-dark.hes4g9rd_Z27IRbd.webp
+    Type=Application
+    Categories=Network;WebBrowser;
+    Terminal=false
+    StartupWMClass=Zen
   '';
 }
 
