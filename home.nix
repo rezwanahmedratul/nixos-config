@@ -14,7 +14,7 @@
   programs.alacritty = {
     enable = true;
     settings = {
-      general.import = [ pkgs.alacritty-theme.marine_dark ];
+      general.import = [ pkgs.alacritty-theme.github_dark ];
 
       font = {
         normal = {

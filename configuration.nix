@@ -77,6 +77,7 @@
     google-chrome
     alacritty
     htop
+    btop
     bat
     gedit
     vlc
