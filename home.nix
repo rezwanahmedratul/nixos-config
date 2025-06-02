@@ -25,8 +25,8 @@
 
       window = {
         dimensions = {
-          columns = 70;
-          lines = 20;
+          columns = 80;
+          lines = 24;
         };
         opacity = 0.65;
         blur = true;
