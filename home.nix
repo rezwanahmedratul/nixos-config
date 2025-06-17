@@ -43,10 +43,6 @@
     libsForQt5.qt5ct
     telegram-desktop
     whatsie
-    vscode
-    gcc
-    gnumake
-    cmake
     kde-rounded-corners
   ];
 

@@ -50,11 +50,13 @@
   users.users.ratul = {
     isNormalUser = true;
     description = "Rezwan Ahmed Ratul";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "lp" ];  # added "lp" group for Bluetooth permissions
     packages = with pkgs; [
       kdePackages.kate
       kdePackages.krdc
+      kdePackages.qtwebengine
       kdePackages.kdeconnect-kde
+      kdePackages.bluedevil
     ];
   };
 
@@ -65,6 +67,12 @@
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
+  };
+
+  # Explicitly enable bluetooth systemd service
+  systemd.services.bluetooth = {
+    enable = true;
+    wantedBy = [ "multi-user.target" ];
   };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -90,6 +98,16 @@
     noto-fonts-cjk-sans
     noto-fonts-extra
     libreoffice-qt6-fresh
+    pkgs.qt6.qtvirtualkeyboard
+    yt-dlp
+    ffmpeg
+    python3Packages.pip
+    bluez
+    #blueman
+    vscode
+    gcc
+    gnumake
+    cmake
   ];
 
   # Nix Garbage Collection Automation (weekly, keep only 7 days)
